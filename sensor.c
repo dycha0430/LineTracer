@@ -67,12 +67,41 @@ int sense_nth_ir(int ir_num) {
 
 
 
+
 /*
  * State 감지
+ * 가운데쪽 2개여야 디폴트..
  * */
 STATE detect_state(int sensor) {
     int set_bits = count_set_bits(sensor);
-    if (set_bits >= 6) return START;
-    else if (set_bits >= 2) return DEFAULT;
-    return NONE;
+    if (set_bits >= 7) return CROSS;
+    else if (set_bits == 6) return START;
+    else if (set_bits >= 2) {
+        // 오/왼 활성화 개수 비교만 함
+        int left_set_bits = count_left_set_bits(sensor);
+        int right_set_bits = count_right_set_bits(sensor);
+        if (abs(left_set_bits-right_set_bits) <= 1) {
+            // TODO: 차이가 1까지로 여유롭게 할 수도 있을 듯
+            return DEFAULT;
+        } else if (left_set_bits > right_set_bits) {
+            return TURN_LEFT;
+        } else {
+            return TURN_RIGHT;
+        }
+    } else if (set_bits == 1) {
+        int sensor4 = get_nth_bit(sensor, 4); // right
+        int sensor5 = get_nth_bit(sensor, 5); // left
+        if (sensor4 || sensor5) return DEFAULT; // return NARROW?
+
+        // TODO!! 좁은길에도 이 로직을 적용할 필요?
+        int left_set_bits = count_left_set_bits(sensor);
+        int right_set_bits = count_right_set_bits(sensor);
+        if (left_set_bits > right_set_bits) {
+            return TURN_LEFT;
+        } else {
+            return TURN_RIGHT;
+        }
+    }
+
+    return ERROR; // 센서에 아무것도 감지되지 않는 상태
 }

@@ -16,7 +16,8 @@ C_SRCS += \
 ../motor.c \
 ../sensor.c \
 ../startup_msp432p401r_ccs.c \
-../system_msp432p401r.c 
+../system_msp432p401r.c \
+../tachometer.c 
 
 C_DEPS += \
 ./Clock.d \
@@ -26,7 +27,8 @@ C_DEPS += \
 ./motor.d \
 ./sensor.d \
 ./startup_msp432p401r_ccs.d \
-./system_msp432p401r.d 
+./system_msp432p401r.d \
+./tachometer.d 
 
 OBJS += \
 ./Clock.obj \
@@ -36,7 +38,8 @@ OBJS += \
 ./motor.obj \
 ./sensor.obj \
 ./startup_msp432p401r_ccs.obj \
-./system_msp432p401r.obj 
+./system_msp432p401r.obj \
+./tachometer.obj 
 
 OBJS__QUOTED += \
 "Clock.obj" \
@@ -46,7 +49,8 @@ OBJS__QUOTED += \
 "motor.obj" \
 "sensor.obj" \
 "startup_msp432p401r_ccs.obj" \
-"system_msp432p401r.obj" 
+"system_msp432p401r.obj" \
+"tachometer.obj" 
 
 C_DEPS__QUOTED += \
 "Clock.d" \
@@ -56,7 +60,8 @@ C_DEPS__QUOTED += \
 "motor.d" \
 "sensor.d" \
 "startup_msp432p401r_ccs.d" \
-"system_msp432p401r.d" 
+"system_msp432p401r.d" \
+"tachometer.d" 
 
 C_SRCS__QUOTED += \
 "../Clock.c" \
@@ -66,6 +71,7 @@ C_SRCS__QUOTED += \
 "../motor.c" \
 "../sensor.c" \
 "../startup_msp432p401r_ccs.c" \
-"../system_msp432p401r.c" 
+"../system_msp432p401r.c" \
+"../tachometer.c" 
 
 

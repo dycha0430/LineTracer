@@ -18,6 +18,7 @@ ORDERED_OBJS += \
 "./sensor.obj" \
 "./startup_msp432p401r_ccs.obj" \
 "./system_msp432p401r.obj" \
+"./tachometer.obj" \
 "../msp432p401r.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
@@ -161,8 +162,8 @@ LineTracer.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "Clock.obj" "bit_op.obj" "led.obj" "main.obj" "motor.obj" "sensor.obj" "startup_msp432p401r_ccs.obj" "system_msp432p401r.obj" 
-	-$(RM) "Clock.d" "bit_op.d" "led.d" "main.d" "motor.d" "sensor.d" "startup_msp432p401r_ccs.d" "system_msp432p401r.d" 
+	-$(RM) "Clock.obj" "bit_op.obj" "led.obj" "main.obj" "motor.obj" "sensor.obj" "startup_msp432p401r_ccs.obj" "system_msp432p401r.obj" "tachometer.obj" 
+	-$(RM) "Clock.d" "bit_op.d" "led.d" "main.d" "motor.d" "sensor.d" "startup_msp432p401r_ccs.d" "system_msp432p401r.d" "tachometer.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

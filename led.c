@@ -5,6 +5,8 @@ color BLUE = 0b00000100;
 color GREEN = 0b00000010;
 color WHITE = 0b00000111;
 color YELLOW = 0b00000011;
+color CYAN = 0b00000110;
+color MAGENTA = 0b00000101;
 
 
 void turn_on_led(int color) {

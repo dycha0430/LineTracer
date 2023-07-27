@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <stdbool.h>
+#include <math.h>
 #include "bit_op.h"
 
 #endif

@@ -10,6 +10,8 @@ extern color BLUE;
 extern color GREEN;
 extern color WHITE;
 extern color YELLOW;
+extern color CYAN;
+extern color MAGENTA;
 
 void led_init();
 void turn_on_led();
